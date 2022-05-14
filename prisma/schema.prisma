@@ -9,3 +9,36 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+model animal {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(150)
+  scientific_name String @db.VarChar(150)
+  description String?
+  url_image String?
+  url_info String?
+  habitad habitad @relation(fields: [habitadId], references: [id])
+  habitadId Int
+  riskstatus estado_riesgo @relation(fields: [riskstatusId], references: [id])
+  riskstatusId Int
+
+  dateCreated DateTime @default(now())
+  lastUpdated DateTime @updatedAt
+}
+
+model habitad {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(60) @unique
+  caracteristicas String?
+
+  dateCreated DateTime @default(now())
+  lastUpdated DateTime @updatedAt
+}
+
+model estado_riesgo {
+  id Int @id @default(autoincrement())
+  estado_riesgo String @db.VarChar(60) @unique
+
+  dateCreated DateTime @default(now())
+  lastUpdated DateTime @updatedAt
+}
+
