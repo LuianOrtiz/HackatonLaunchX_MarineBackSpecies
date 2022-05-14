@@ -9,16 +9,19 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model animal {
-  id Int @id @default(autoincrement())
-  name String @db.VarChar(150)
-  scientific_name String @db.VarChar(150)
-  description String?
-  url_image String?
-  url_info String?
-  habitad habitad @relation(fields: [habitadId], references: [id])
-  habitadId Int
-  riskstatus estado_riesgo @relation(fields: [riskstatusId], references: [id])
+
+  id              Int     @id @default(autoincrement())
+  name            String  @db.VarChar(150)
+  scientific_name String  @db.VarChar(150)
+  description     String?
+  url_image       String?
+  url_info        String?
+  habitad         habitad @relation(fields: [habitadId], references: [id])
+  habitadId       Int
+
+  riskstatus   estado_riesgo @relation(fields: [riskstatusId], references: [id])
   riskstatusId Int
 
   dateCreated DateTime @default(now())
@@ -26,19 +29,20 @@ model animal {
 }
 
 model habitad {
-  id Int @id @default(autoincrement())
-  name String @db.VarChar(60) @unique
+  id              Int     @id @default(autoincrement())
+  name            String  @unique @db.VarChar(60)
   caracteristicas String?
 
   dateCreated DateTime @default(now())
   lastUpdated DateTime @updatedAt
+  animal      animal[]
 }
 
 model estado_riesgo {
-  id Int @id @default(autoincrement())
-  estado_riesgo String @db.VarChar(60) @unique
+  id            Int    @id @default(autoincrement())
+  estado_riesgo String @unique @db.VarChar(60)
 
   dateCreated DateTime @default(now())
   lastUpdated DateTime @updatedAt
+  animal      animal[]
 }
-
