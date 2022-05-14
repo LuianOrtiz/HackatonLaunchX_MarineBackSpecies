@@ -31,7 +31,6 @@ model animal {
 model habitad {
   id              Int     @id @default(autoincrement())
   name            String  @unique @db.VarChar(60)
-  caracteristicas String?
 
   dateCreated DateTime @default(now())
   lastUpdated DateTime @updatedAt

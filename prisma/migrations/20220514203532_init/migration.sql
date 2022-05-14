@@ -18,7 +18,6 @@ CREATE TABLE "animal" (
 CREATE TABLE "habitad" (
     "id" SERIAL NOT NULL,
     "name" VARCHAR(60) NOT NULL,
-    "caracteristicas" TEXT,
     "dateCreated" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "lastUpdated" TIMESTAMP(3) NOT NULL,
 
