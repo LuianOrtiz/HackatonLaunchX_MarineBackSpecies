@@ -7,12 +7,12 @@
     - [@AlejandroTrinidad](https://github.com/AlejandroTrinidad97)
     - [@SalmaGuitierrez]()
 
-- Tecnologías utilizadas
+### Tecnologías utilizadas
     - ExpressJS
     - PrismaORM
     - CORS
 
-- Project setup
+### Project setup
     - Clonar el proyecto
     `
         git clone https://github.com/LuianOrtiz/HackatonLaunchX_MarineBackSpecies
