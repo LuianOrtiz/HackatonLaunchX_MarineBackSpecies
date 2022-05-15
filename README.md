@@ -12,7 +12,7 @@
     - PrismaORM
     - CORS
 
-- Manual de instalación
+- Project setup
     - Clonar el proyecto
     `
         git clone https://github.com/LuianOrtiz/HackatonLaunchX_MarineBackSpecies
