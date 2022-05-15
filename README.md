@@ -28,9 +28,10 @@
     ```  
     
     ````
-    donde **johndoe** sería tu usuario
-    **randompassowrd** tu contraseña del usuario
-    **mydb** tu base de datos
+    donde 
+    johndoe sería tu usuario
+    randompassowrd la contraseña del usuario
+    mydb el nombre de tu base de datos
     ````
     Usar otro motor de base de datos -> [documentación de prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-mysql) 
 
