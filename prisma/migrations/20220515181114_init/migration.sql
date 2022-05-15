@@ -10,6 +10,7 @@ CREATE TABLE "animal" (
     "riskstatusId" INTEGER NOT NULL,
     "dateCreated" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "lastUpdated" TIMESTAMP(3) NOT NULL,
+    "url_asosiacion" TEXT,
 
     CONSTRAINT "animal_pkey" PRIMARY KEY ("id")
 );

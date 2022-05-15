@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,37 +8,33 @@ datasource db {
 }
 
 model animal {
-
-  id              Int     @id @default(autoincrement())
-  name            String  @db.VarChar(150)
-  scientific_name String  @db.VarChar(150)
+  id              Int           @id @default(autoincrement())
+  name            String        @db.VarChar(150)
+  scientific_name String        @db.VarChar(150)
   description     String?
   url_image       String?
   url_info        String?
-  habitad         habitad @relation(fields: [habitadId], references: [id])
   habitadId       Int
-
-  riskstatus   estado_riesgo @relation(fields: [riskstatusId], references: [id])
-  riskstatusId Int
-
-  dateCreated DateTime @default(now())
-  lastUpdated DateTime @updatedAt
+  riskstatusId    Int
+  dateCreated     DateTime      @default(now())
+  lastUpdated     DateTime      @updatedAt
+  url_asosiacion  String?
+  habitad         habitad       @relation(fields: [habitadId], references: [id])
+  riskstatus      estado_riesgo @relation(fields: [riskstatusId], references: [id])
 }
 
 model habitad {
-  id              Int     @id @default(autoincrement())
-  name            String  @unique @db.VarChar(60)
-
+  id          Int      @id @default(autoincrement())
+  name        String   @unique @db.VarChar(60)
   dateCreated DateTime @default(now())
   lastUpdated DateTime @updatedAt
   animal      animal[]
 }
 
 model estado_riesgo {
-  id            Int    @id @default(autoincrement())
-  estado_riesgo String @unique @db.VarChar(60)
-
-  dateCreated DateTime @default(now())
-  lastUpdated DateTime @updatedAt
-  animal      animal[]
+  id            Int      @id @default(autoincrement())
+  estado_riesgo String   @unique @db.VarChar(60)
+  dateCreated   DateTime @default(now())
+  lastUpdated   DateTime @updatedAt
+  animal        animal[]
 }
