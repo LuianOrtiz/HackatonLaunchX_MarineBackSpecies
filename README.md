@@ -13,14 +13,14 @@
     - CORS
 
 ### Project setup
-    - Clonar el proyecto
+- Clonar el proyecto
     `
         git clone https://github.com/LuianOrtiz/HackatonLaunchX_MarineBackSpecies
     `
-    - Instalar dependencias
+- Instalar dependencias
     ` npm install `
 
-    - Inicializa primsa
+- Inicializa primsa
     `npx prisma init`
     te crea un archivo **.env** , ve y agrega
     ```
@@ -35,17 +35,18 @@
     ````
     Usar otro motor de base de datos -> [documentación de prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-mysql) 
 
-    - Corre la migración a la Base de datos
+- Corre la migración a la Base de datos
     `npx prisma migrate dev --name init` 
 
-    - Inicializa los seed's en esta secuencía para agregar datos a nuestra db
+- Inicializa los seed's en esta secuencía para agregar datos a nuestra db
     ```
     node prisma\seed_habitad.js
     node prisma\seed_estadoriesgo.js
     node prisma\seed_animal.js
     ```
 
-    - Corré tu server con
+- Corré tu server con
     `npm run developer`
+Regresa al proyecto de frontend y continua con las instrucicones
 
 
