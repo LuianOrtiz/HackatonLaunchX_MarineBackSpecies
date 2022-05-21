@@ -6,7 +6,6 @@
   "scripts": {
     "server": "node ./lib/server.js",
     "developer": "nodemon ./lib/server.js",
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest",
     "linter": "eslint .",
     "linter-fix": "eslint . --fix"
   },
